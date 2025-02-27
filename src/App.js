@@ -22,7 +22,7 @@ class App extends Component {
     }
 
   render(){
-
+      // We can destructure the state object to get the monsters and searchField
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter(monster => 
       monster.name.toLowerCase().includes(searchField.toLowerCase())
@@ -30,6 +30,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1 className='h1'>Monsters Rolodex</h1>
         <SearchBox 
           placeholder='search monsters'
           handleChange={e => this.setState({searchField: e.target.value})}
